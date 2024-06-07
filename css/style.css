@@ -1,0 +1,1036 @@
+
+*,:after,:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.15
+}
+:root {
+    --primary: 
+    #a06cd5;
+    --background: #191919;
+    --navbar-height: 48px;
+}
+/*-----Logo------ */
+.menu__bar {
+    display: flex;
+    align-items: center;
+    
+}
+
+.logo {
+    display: block;
+    margin-left: 0; /* Asegura que el logo esté alineado a la izquierda */
+}
+
+.logo-img {
+    width: 200px; /* Ajusta el tamaño según tus necesidades */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 1001;
+}
+
+/*-----Estilo de NAV------ */
+
+
+.menu__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    z-index: 2;
+}
+
+.menu__bar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 3rem;
+    gap: 2rem;
+ 
+    height: 6rem;
+    opacity: 0.9;
+
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    z-index: 1002; /* Asegura que el ícono esté por encima del menú */
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+   
+}
+
+.logo svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.navigation>li {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.navigation>li>a {
+    color: white;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-weight: 700;
+    background-image: linear-gradient(to right,
+            var(--primary),
+            var(--primary) 50%,
+            white 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 0.2rem 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation>li>a:before {
+    content: '';
+    background: var(--primary);
+    display: block;
+    position: absolute;
+    bottom: -0.125rem;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.navigation>li>a:hover {
+    background-position: 0;
+}
+
+.navigation>li>a:hover::before {
+    width: 100%;
+}
+/* Estilos del botón de WhatsApp */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: float 1s infinite;
+
+
+}
+
+.whatsapp-button a {
+  display: block;
+  padding: 15px;
+  text-align: center;
+}
+
+.whatsapp-button img {
+  width: 85px;
+  /* Tamaño del icono de WhatsApp */
+  height: 85px;
+
+}
+@media (min-width: 600px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-button img {
+    width: 55px;
+    /* Tamaño del icono de WhatsApp */
+    height: 55px;
+
+  }
+    .navigation {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navigation--mobile {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed; /* Cambia a fixed para ocupar toda la pantalla */
+        display: flex;
+        padding: 0; /* Elimina el padding para centrar correctamente */
+        height: 100%; /* Asegura que el menú ocupe toda la altura de la pantalla */
+        background-color: rgb(0, 0, 0);
+        gap: 3rem;
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente */
+        justify-content: center; /* Centra verticalmente */
+     
+        animation: fadein 0.3s forwards;
+        z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    }
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        100% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+    }
+
+    .navigation--mobile--fadeout {
+        animation: fadeout 300ms forwards;
+    }
+
+    @keyframes fadeout {
+        0% {
+            opacity: 1;
+            width: 100%;
+            height: calc(100vh - var(--navbar-height));
+        }
+
+        100% {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+
+}
+/*-----Fin de NAV------ */
+/*-----Foto header------ */
+/* 
+---------------------------------------------
+Banner Style
+--------------------------------------------- 
+*/.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+/* Estilos para el efecto Parallax */
+.main-banner {
+
+  position: relative;
+  background: url('../imagenes/Presentacion.jpg') no-repeat center center fixed;
+  background-size: cover;
+  
+  height: 95vh;
+  padding-top: 290px;
+  padding-bottom: 240px;
+  background-color: #2a2a2a;
+}
+
+
+.header-text {
+  width: 50%;
+  margin-left: 75px;
+  margin-top: -50px;
+}
+
+  
+.highlighted-text2{
+  background-color: rgb(250, 250, 250);
+  font-size: 3rem;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-style: italic;
+    color: rgb(36, 36, 36);
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+  .highlighted-text {
+    background-color: black;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    padding: 5px;
+}
+  
+  
+  .main-banner .buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: start;
+  }
+
+
+  .buttons {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea los botones verticalmente */
+    margin-top: 20px; /* Espacio superior, ajusta según necesidad */
+}
+
+.border-button a, .main-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px; /* Ajusta el tamaño de la fuente según necesidad */
+    border-radius: 5px;
+    text-align: center;
+}
+
+.border-button a {
+    color: #ffffff; /* Color del texto */
+    border: 2px solid #ffffff; /* Borde del botón */
+    background-color: transparent; /* Fondo transparente */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+.border-button a:hover {
+    background-color: #5f5f5f; /* Color de fondo al pasar el cursor */
+    color: #fff; /* Color del texto al pasar el cursor */
+}
+
+.main-button a {
+    color: #fff; /* Color del texto */
+    background-color: #28a745; /* Color de fondo */
+    border: 2px solid #28a745; /* Borde del botón */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+.main-button a:hover {
+    background-color: #218838; /* Color de fondo al pasar el cursor */
+    border-color: #1e7e34; /* Color del borde al pasar el cursor */
+}
+  @media (max-width:786px){
+    .main-banner {
+      
+    
+    padding-bottom: 120px;
+    }
+    .header-text {
+      text-align: center;
+      width: 100%;
+      margin-left:0;
+    }
+  
+    .main-banner .buttons{
+      display: flex;
+      justify-content: center;
+      
+    }
+  
+    .buttons a {
+      margin: 0 10px; /* Espacio entre los botones */
+    }
+  
+  
+    .main-banner h2 {
+      
+      font-size: 25px;}
+  }
+  
+  .main-banner p {
+    margin-top: 5px;
+  }
+  
+  
+  
+  .main-banner .border-button {
+    margin-right: 15px;
+  }
+  
+  .main-banner .owl-banner {
+    margin-top: -40px;
+  }
+  
+  .main-banner .owl-nav {
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    bottom: -76px;
+    text-align: center;
+  }
+  
+  .main-banner .owl-nav .owl-prev {
+    margin-right: 7.5px;
+  }
+  
+  .main-banner .owl-nav .owl-next {
+    margin-left: 7.5px;
+  }
+  
+  .main-banner .owl-nav .owl-prev span,
+  .main-banner .owl-nav .owl-next span {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 24px;
+    display: inline-block;
+    color: #7453fc;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all .3s;
+  }
+  
+  .main-banner .owl-nav .owl-prev span:hover,
+  .main-banner .owl-nav .owl-next span:hover {
+    opacity: 1;
+  }
+  
+/*-----Texto que gira------ */
+.texti {
+    display: flex;
+    justify-content: flex-start;
+    background: #000000;
+    overflow: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  
+  }
+  
+  .text3 {
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic; /* Agregamos el estilo itálico */
+    text-transform: uppercase;
+    color: black; /* Color de relleno de las letras */
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white; /* Color del borde de las letras */
+    white-space: nowrap;
+   
+    padding: 0 3rem;
+    letter-spacing: -0,5px;
+    animation: move-rtl 6000ms linear infinite;
+}
+.text4 {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  color: rgb(251, 251, 251); /* Color de relleno de las letras */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white; /* Color del borde de las letras */
+  white-space: nowrap;
+  
+  padding: 0 3rem;
+  letter-spacing: -0,5px;
+  animation: move-rtl 6000ms linear infinite;
+}
+  @keyframes move-rtl {
+    0% {
+      transform: translateX(0);
+      /* Comienza desde la parte superior */
+    }
+  
+    100% {
+      transform: translateX(-100%);
+      /* Se desplaza completamente hacia arriba */
+    }
+  }
+  
+  /*-----Fin Texto que gira------ */
+
+
+
+
+ /*-----INICIO SECCION COMIDA------ */
+
+
+ .section-banner {
+  background-image: url('../imagenes/Comida\ fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Clave para el efecto parallax */
+  height: 100vh; /* Ajusta la altura según sea necesario */
+  display: flex;
+  align-items: center;
+}
+
+
+.content {
+  width: 100%; /* Ajustado al complemento del ancho de la imagen de la izquierda */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  /* Si necesitas estilos específicos para .content, agrégalos aquí */
+  z-index: 1; /* Asegura que el contenido esté por encima del fondo */
+}
+
+.titulo {
+  z-index: 1; /* Asegura que el título esté por encima del fondo */
+  color: white; /* Ejemplo de estilo adicional */
+}
+
+.images-container .carousel-item {
+  z-index: 1; /* Asegura que las imágenes estén por encima del fondo */
+  /* Añade cualquier estilo adicional necesario aquí */
+}
+
+.left-image {
+  width: 65%; /* Ajustado a casi la mitad de la sección */
+  height: 100vh;
+  background-image: url('../imagenes/Plato\ con\ mancha.png');
+  background-size: cover;
+  
+}
+
+
+.images-container {
+  display: flex;
+  
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  margin-right: 10px; /* Añadimos margen derecho entre las imágenes */
+}
+
+.images-container {
+  margin-left: -100px;
+  display: flex;
+  position: relative; /* Añadido para permitir posicionamiento absoluto de elementos hijos */
+}
+
+.carousel-item {
+  position: relative; /* Añadido para permitir que los elementos hijos se posicionen relativamente a este contenedor */
+}
+
+.image-container {
+  position: relative; /* Añadido para posicionar la imagen dentro de este contenedor */
+  z-index: 1; /* Asegura que la imagen esté por encima del fondo blanco */
+  z-index: 999;
+}
+
+.carousel-item img {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  height: auto;
+  max-height: 200px; /* Ajusta la altura máxima según sea necesario */
+  border-radius: 10px; /* Ajusta el radio del borde según sea necesario */
+  transition: transform 0.3s ease; /* Agrega una transición suave al efecto 3D */
+  position: relative;
+  z-index: 999;
+  
+}
+
+.image-overlay {
+  position: absolute;
+  /* Posiciona el fondo blanco en el medio verticalmente */
+  left: 50%; /* Posiciona el fondo blanco en el medio horizontalmente */
+  width: calc(80% + 5px); /* Ancho del contenedor + margen */
+  height: calc(80% + 10px); /* Alto del contenedor + margen */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+  border-radius: 20px; /* Ajusta el radio del borde según sea necesario */
+  transform: translate(-50%, -60%); /* Centra el fondo blanco en el contenedor */
+  z-index: 0; /* Asegura que el fondo blanco esté debajo de la imagen */
+}
+
+.caption {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  z-index: 99999;
+
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -30px; /* Ajusta la distancia del texto al contenedor de la imagen para que esté más cerca del borde inferior */
+  position: relative;
+  top: 60px; /* Baja el texto para que esté más cerca del borde inferior del contenedor */
+}
+
+.carousel-item .caption p {
+  font-size: 35px; /* Ajusta el tamaño del texto según sea necesario */
+  color:#6d6a6a;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0; /* Elimina los márgenes por defecto */
+  z-index:333 ;
+}
+
+.titulo{
+  color: #000000;
+  text-align: center;
+}
+.highlighted-text3 {
+  background-color: rgb(0, 0, 0);
+  font-size: 1rem;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.highlighted-text4 {
+  background-color: rgb(0, 0, 0);
+  font-size: 1rem;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-style: italic;
+  color: #a06cd5;
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+text-align: left; /* Alinea el texto a la izquierda */
+}
+button.start-plan {
+  background-color: #6a0dadde;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 10%;
+  z-index: 2;
+  box-shadow: 0 0 20px rgb(160, 108, 213); /* Box-shadow violeta */
+}
+
+button.start-plan:hover {
+  background-color: #5500b0;
+}
+
+@media (max-width: 1300px) {
+.highlighted-text2 {
+  font-size: 1.9em;
+}
+.highlighted-text3,
+.highlighted-text4 {
+  font-size: 0.9rem; /* Ajusta el tamaño del texto */
+  padding: 3px 5px; /* Ajusta el padding */
+}
+.carousel-item {
+  flex: 1 1 100%;
+  max-width: none;
+}
+
+.start-plan {
+  font-size: 1em;
+  padding: 8px 16px;
+}}
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 786px) {
+  
+
+  .highlighted-text2{
+    font-size: 25px;
+  }
+  .section-banner {
+    
+    height: 120vh; /* Ajusta la altura automáticamente */
+    padding: 100px 0; /* Añade padding para espacio alrededor */
+  }
+
+  .left-image {
+    display: none; /* Oculta la imagen de la izquierda en dispositivos móviles */
+  }
+
+  .content {
+    width: 100%;
+    padding: 100px 0px;
+    text-align: center;
+  }
+
+  .titulo {
+    margin-top: 150px;
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    color: white;
+  }
+
+  .images-container {
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 200px;
+  }
+
+  .carousel-item {
+    width: 200px; /* Ajusta el ancho de los elementos del carrusel */
+    margin: 10px 0; /* Añade margen superior e inferior */
+    padding: 5px; /* Ajusta el padding */
+  }
+
+  .carousel-item img {
+    width: 100%;
+    max-height: 150px; /* Ajusta la altura máxima para mobile */
+  }
+
+  .caption {
+    font-size: 14px; /* Ajusta el tamaño del texto de la leyenda */
+    top: 10px; /* Ajusta la posición del texto */
+  }
+
+  .highlighted-text3,
+  .highlighted-text4 {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto */
+    padding: 3px 5px; /* Ajusta el padding */
+  }
+  .carousel-item .caption p {
+    font-size: 25px; /* Ajusta el tamaño del texto según sea necesario */
+    
+  }
+  button.start-plan {
+    
+    padding: 8px 16px;
+    font-size: 0.6em;
+   
+}}
+
+
+
+
+
+ /*----FIN SECCION DE COMIDA------ */
+ 
+/*----Inicio de testimonios------ */
+
+
+.testimonial-section {
+  background: url('../imagenes/Testimonio fondo.jpg');
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 5rem;
+  
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  max-width: 18rem;
+  width: 100%;
+  color: #fff;
+  background: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  max-width: 100%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  vertical-align: top;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.corner::before,
+.corner::after {
+  position: absolute;
+  content: '';
+  background: #fff;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.right-top::before,
+.right-top::after {
+  top: var(--offset);
+  right: var(--offset);
+}
+
+.right-bottom::before,
+.right-bottom::after {
+  bottom: var(--offset);
+  right: var(--offset);
+}
+
+.left-bottom::before,
+.left-bottom::after {
+  bottom: var(--offset);
+  left: var(--offset);
+}
+
+.left-top::before,
+.left-top::after {
+  top: var(--offset);
+  left: var(--offset);
+}
+
+.corner::before {
+  width: 0;
+  height: 1px;
+}
+
+.corner::after {
+  height: 0;
+  width: 1px;
+}
+
+.card figcaption {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  max-width: 20rem;
+  width: 100%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  opacity: 0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+  transition: all 0.4s ease;
+}
+
+.card p {
+  opacity: 0;
+  font-size: 0.8rem;
+  transition: all 0.4s ease;
+}
+
+.card:hover img {
+  zoom: 1;
+  filter: alpha(opacity=20);
+  opacity: 0.3;
+}
+
+
+
+.card:hover h3 {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+.card:hover p {
+  opacity: 1;
+  transition-delay: 0.35s;
+}
+/*----Fin de testimonios------ */
+
+
+
+
+/*----Preguntas frecuentes------ */
+.section-preguntas{
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 200px;
+}
+.highlighted-text5{
+  background-color: rgb(250, 250, 250);
+  font-size: 2rem;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-style: italic;
+    color: rgb(36, 36, 36);
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+.centered-title {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.faq-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.faq-question p {
+  font-weight: 700;
+  font-style: italic;
+  color: #fff;
+  margin-left: 10px;
+  flex: 1;
+}
+
+.faq-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #a06cd5;
+  color: #000;
+  font-size: 14px;
+}
+
+.faq-answer {
+  display: none;
+  background-color: #00000096;
+  padding: 10px 0;
+}
+.faq-answer p {
+color: #fff;
+margin-left: 10px;
+}
+
+hr {
+  border: 1px solid #fff;
+}
+
+/*----FIN de Preguntas frecuentes------ */
+
+
+/*----Inicio de footer------ */
+
+.footer {
+  background: url('../imagenes/Footer.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.logo img {
+  max-height: 80px;
+}
+
+.copyright {
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #6a0dad; /* Color violeta */
+  transition: fill 0.3s ease;
+}
+
+.social-icon svg:hover {
+  fill: #fff; /* Color al pasar el mouse */
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+  }
+
+  .logo, .copyright, .social-icons {
+      margin: 10px 0;
+  }
+}
+
+/*----Fin de footer------ */
+
+/*-----Estilo de movmiento de tarjeta------ */
+
+.position-relative {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ajusta la altura como necesites */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+
+  .error__card-img {
+    perspective: 800px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d; /* Agregamos esta línea para asegurar que la transformación preserve la perspectiva */
+  }
+  
+  .error__card-img:hover {
+    transform: perspective(800px) rotateX(5deg) rotateY(5deg); /* Reducimos la rotación para un efecto más sutil */
+  }
+
+
+.error__card-background {
+    left: 15%;
+    top: -15%;
+    z-index: -1
+}
+
+.error__card-img img {
+    filter: drop-shadow(rgba(0,0,0,.3) 10px 13px 10px);
+  
+    transform-style: preserve-3d
+}
+
+/*-----FIN de movmiento de tarjeta------ */

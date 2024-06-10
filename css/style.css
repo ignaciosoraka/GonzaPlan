@@ -242,6 +242,38 @@ html {
 
 }
 /*-----Fin de NAV------ */
+.parallax-image {
+  display: block;
+  height: 58.75rem;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.parallax-image-01 {
+  background-image: url("../imagenes/Presentacion.jpg");
+}
+
+.parallax-image-02 {
+  background-image: url("../imagenes/Comida\ fondo.jpg");
+
+}
+
+.parallax-image-03 {
+  background-image: url("../imagenes/Testimonio fondo.jpg");
+}
+.parallax-image-04 {
+  background-image: url("../imagenes/Preguntas\ frecuentes.jpg");
+}
+section {
+  padding: 4rem;
+}
+
+section > h2 {
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
 /*-----Foto header------ */
 /* 
 ---------------------------------------------
@@ -258,10 +290,7 @@ Banner Style
 /* Estilos para el efecto Parallax */
 .main-banner {
 
-  
-  background: url('../imagenes/Presentacion.jpg') no-repeat center center;
   background-size: cover;
-  
   height: 95vh;
   padding-top: 290px;
   padding-bottom: 240px;
@@ -480,7 +509,7 @@ Banner Style
 
 
  .section-banner {
-  background-image: url('../imagenes/Comida\ fondo.jpg');
+ 
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Clave para el efecto parallax */
@@ -737,7 +766,7 @@ button.start-plan:hover {
 
 
 .testimonial-section {
-  background: url('../imagenes/Testimonio fondo.jpg');
+  
   padding: 100px 0;
   display: flex;
   justify-content: center;

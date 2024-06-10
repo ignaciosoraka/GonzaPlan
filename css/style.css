@@ -258,8 +258,8 @@ Banner Style
 /* Estilos para el efecto Parallax */
 .main-banner {
 
-  position: relative;
-  background: url('../imagenes/Presentacion.jpg') no-repeat center center fixed;
+  
+  background: url('../imagenes/Footer.jpg') no-repeat center center;
   background-size: cover;
   
   height: 95vh;

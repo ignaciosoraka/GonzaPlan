@@ -49,7 +49,31 @@ html {
 
 /*-----Estilo de NAV------ */
 
+.menu__bar {
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
 
+.menu__bar a {
+  color: black; /* Color de los enlaces en el estado normal */
+}
+
+/* Estilos para el menú después de hacer scroll */
+.menu__bar.scrolled {
+  background-color: black;
+}
+
+.menu__bar.scrolled a {
+  color: white; /* Color de los enlaces después de hacer scroll */
+}
+
+.logo-img2 {
+  transition: filter 0.3s;
+}
+
+.menu__bar.scrolled .logo-img2 {
+  filter: brightness(0) invert(1); /* Hace que el logo sea blanco */
+}
 .menu__wrapper {
   display: flex;
   position: relative;
@@ -64,14 +88,18 @@ html {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 0 3rem;
+  padding: 0 4rem;
   gap: 2rem;
 
   height: 6rem;
   opacity: 0.9;
 
 }
-
+@media (max-width:786px){
+  .menu__bar{
+    padding: 0 1rem;
+  }
+}
 .menu-icon {
   cursor: pointer;
   display: flex;
@@ -211,7 +239,8 @@ html {
     display: flex;
     padding: 0;
     /* Elimina el padding para centrar correctamente */
-    height: 100%;
+    width: 100vw; /* Ocupa el ancho completo de la pantalla */
+    height: 100vh; /* Ocupa el alto completo de la pantalla */
     /* Asegura que el menú ocupe toda la altura de la pantalla */
     background-color: rgb(0, 0, 0);
     gap: 3rem;
@@ -261,7 +290,7 @@ html {
 }
 
 /*-----Fin de NAV------ */
-/* Estilos generales para imágenes parallax */
+
 /* Estilos generales para imágenes parallax */
 .parallax-image {
   display: block;
@@ -274,19 +303,19 @@ html {
 /* Ajustes específicos para dispositivos móviles */
 @media (max-width: 768px) {
   .parallax-image {
-    background-attachment: scroll;
-    /* Deshabilita el efecto parallax en dispositivos móviles */
-    background-size: cover;
-    background-position: center;
+    background-attachment: scroll !important; /* Deshabilita el efecto parallax en dispositivos móviles */
+    background-size: cover !important;
+    background-position: center !important;
+    height: auto !important;
+    min-height: 50vh !important;
   }
 
-  /* Ajusta la altura para dispositivos móviles */
-  .parallax-image {
-    height: auto;
-    min-height: 50vh;
-    /* Puedes ajustar esta altura según sea necesario */
+  .parallax-image-02 {
+    background-image: url("../imagenes/Comida fondo.jpg");
   }
 }
+ 
+  
 
 /* Estilos específicos para cada imagen parallax */
 .parallax-image-01 {
@@ -575,56 +604,73 @@ Banner Style
 /*-----INICIO SECCION COMIDA------ */
 
 
-.section-banner {
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.section-banner {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Clave para el efecto parallax */
   height: 100vh;
-  /* Ajusta la altura según sea necesario */
   display: flex;
   align-items: center;
+  min-width: 100%;
+  /* Ajustamos el ancho mínimo para el carrusel */
 }
-
 
 .content {
   width: 100%;
-  /* Ajustado al complemento del ancho de la imagen de la izquierda */
   color: white;
   text-align: center;
   padding: 20px;
-  /* Si necesitas estilos específicos para .content, agrégalos aquí */
   z-index: 1;
-  /* Asegura que el contenido esté por encima del fondo */
 }
 
 .titulo {
   z-index: 1;
-  /* Asegura que el título esté por encima del fondo */
   color: white;
-  /* Ejemplo de estilo adicional */
 }
 
 .images-container .carousel-item {
   z-index: 1;
-  /* Asegura que las imágenes estén por encima del fondo */
-  /* Añade cualquier estilo adicional necesario aquí */
+}
+.images-container2 .carousel-item {
+  z-index: 1;
+}
+.images-container .carousel-item2 {
+  z-index: 1;
 }
 
 .left-image {
   width: 65%;
-  /* Ajustado a casi la mitad de la sección */
   height: 100vh;
-  background-image: url('../imagenes/Plato\ con\ mancha.png');
+  background-image: url('../imagenes/Plato con mancha.png');
   background-size: cover;
-
 }
-
+.left-image2 {
+  position: absolute; 
+  width: 30%; /* Ajusta según sea necesario */
+  height: 100vh; /* Ajusta según sea necesario */
+  background-image: url('../imagenes/Mancuerna\ con\ mancha.png');
+  background-size: cover;
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
 
 .images-container {
   display: flex;
-
+}
+.images-container2 {
+  display: flex;
+  justify-content: center;
 }
 
 .carousel-item {
@@ -633,85 +679,102 @@ Banner Style
   text-align: center;
   position: relative;
   margin-right: 10px;
-  /* Añadimos margen derecho entre las imágenes */
+}.carousel-item2 {
+  flex: 0 0 auto;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  margin-right: 10px;
 }
 
 .images-container {
   margin-left: -100px;
   display: flex;
   position: relative;
-  /* Añadido para permitir posicionamiento absoluto de elementos hijos */
+}
+.images-container2 {
+  margin-left: 300px;
+  display: flex;
+  position: relative;
 }
 
 .carousel-item {
   position: relative;
-  /* Añadido para permitir que los elementos hijos se posicionen relativamente a este contenedor */
 }
-
+.carousel-item2 {
+  position: relative;
+}
 .image-container {
   position: relative;
-  /* Añadido para posicionar la imagen dentro de este contenedor */
   z-index: 1;
-  /* Asegura que la imagen esté por encima del fondo blanco */
   z-index: 999;
 }
 
 .carousel-item img {
-  width: 100%;
-  /* Ajusta el ancho de la imagen al 100% del contenedor */
   height: auto;
   max-height: 200px;
-  /* Ajusta la altura máxima según sea necesario */
   border-radius: 10px;
-  /* Ajusta el radio del borde según sea necesario */
-  transition: transform 0.3s ease;
-  /* Agrega una transición suave al efecto 3D */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 999;
+  
+}
 
+
+
+
+.carousel-item2 img {
+  cursor: pointer;
+  height: auto;
+  max-height: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+}
+
+.carousel-item2 img:hover {
+  transform: scale(1.1); /* Efecto de zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
 }
 
 .image-overlay {
   position: absolute;
-  /* Posiciona el fondo blanco en el medio verticalmente */
   left: 50%;
-  /* Posiciona el fondo blanco en el medio horizontalmente */
   width: calc(80% + 5px);
-  /* Ancho del contenedor + margen */
   height: calc(80% + 10px);
-  /* Alto del contenedor + margen */
   background-color: rgba(255, 255, 255, 0.8);
-  /* Fondo blanco con transparencia */
   border-radius: 20px;
-  /* Ajusta el radio del borde según sea necesario */
   transform: translate(-50%, -60%);
-  /* Centra el fondo blanco en el contenedor */
   z-index: 0;
-  /* Asegura que el fondo blanco esté debajo de la imagen */
 }
 
 .caption {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   z-index: 99999;
-
   text-transform: uppercase;
   text-align: center;
   margin-top: -30px;
-  /* Ajusta la distancia del texto al contenedor de la imagen para que esté más cerca del borde inferior */
   position: relative;
   top: 60px;
-  /* Baja el texto para que esté más cerca del borde inferior del contenedor */
 }
 
 .carousel-item .caption p {
   font-size: 35px;
-  /* Ajusta el tamaño del texto según sea necesario */
   color: #6d6a6a;
   font-weight: 800;
   font-style: italic;
   margin: 0;
-  /* Elimina los márgenes por defecto */
+  z-index: 333;
+}
+.carousel-item2 .caption p {
+  font-size: 35px;
+  color: #6d6a6a;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0;
   z-index: 333;
 }
 
@@ -731,7 +794,6 @@ Banner Style
   margin-bottom: 5px;
   padding: 5px 10px;
   text-align: left;
-  /* Alinea el texto a la izquierda */
 }
 
 .highlighted-text4 {
@@ -745,7 +807,6 @@ Banner Style
   margin-bottom: 5px;
   padding: 5px 10px;
   text-align: left;
-  /* Alinea el texto a la izquierda */
 }
 
 button.start-plan {
@@ -763,11 +824,29 @@ button.start-plan {
   right: 10%;
   z-index: 2;
   box-shadow: 0 0 20px rgb(160, 108, 213);
-  /* Box-shadow violeta */
 }
 
 button.start-plan:hover {
   background-color: #5500b0;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }
 
 @media (max-width: 1300px) {
@@ -787,6 +866,10 @@ button.start-plan:hover {
     flex: 1 1 100%;
     max-width: none;
   }
+  .carousel-item2 {
+    flex: 1 1 100%;
+    max-width: none;
+  }
 
   .start-plan {
     font-size: 1em;
@@ -802,27 +885,25 @@ button.start-plan:hover {
     font-size: 25px;
   }
 
-  .section-banner {
-
-    height: 120vh;
-    /* Ajusta la altura automáticamente */
-    padding: 100px 0;
-    /* Añade padding para espacio alrededor */
-  }
+  
 
   .left-image {
+    display: none;
+    /* Oculta la imagen de la izquierda en dispositivos móviles */
+  }
+  .left-image2 {
     display: none;
     /* Oculta la imagen de la izquierda en dispositivos móviles */
   }
 
   .content {
     width: 100%;
-    padding: 100px 0px;
+    padding: 20px 0px;
     text-align: center;
   }
 
   .titulo {
-    margin-top: 150px;
+    margin-top: 50px;
     font-size: 1.2rem;
     /* Ajusta el tamaño del texto */
     color: white;
@@ -833,7 +914,14 @@ button.start-plan:hover {
     /* Cambia la dirección del flex a columna */
     align-items: center;
     margin-left: 0;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
+  }
+  .images-container2 {
+    flex-direction: column;
+    /* Cambia la dirección del flex a columna */
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 80px;
   }
 
   .carousel-item {
@@ -850,6 +938,21 @@ button.start-plan:hover {
     max-height: 150px;
     /* Ajusta la altura máxima para mobile */
   }
+  .carousel-item2 {
+    width: 200px;
+    /* Ajusta el ancho de los elementos del carrusel */
+    margin: 10px 0;
+    /* Añade margen superior e inferior */
+    padding: 5px;
+    /* Ajusta el padding */
+  }
+
+  .carousel-item2 img {
+
+    max-height: 150px;
+    /* Ajusta la altura máxima para mobile */
+  }
+
 
   .caption {
     font-size: 14px;
@@ -868,6 +971,12 @@ button.start-plan:hover {
 
   .carousel-item .caption p {
     font-size: 25px;
+    /* Ajusta el tamaño del texto según sea necesario */
+
+  }
+  .carousel-item2 .caption p {
+    margin-top: 20px;
+    font-size: 20px;
     /* Ajusta el tamaño del texto según sea necesario */
 
   }
@@ -1026,6 +1135,13 @@ button.start-plan:hover {
   padding-top: 200px;
 }
 
+@media (max-width:786px){
+  .section-preguntas {
+   
+    padding-top: 100px;
+  }
+}
+
 .highlighted-text5 {
   background-color: rgb(250, 250, 250);
   font-size: 2rem;
@@ -1048,6 +1164,7 @@ button.start-plan:hover {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
+  padding-bottom: 100px;
 }
 
 h2 {

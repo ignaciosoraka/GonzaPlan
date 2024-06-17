@@ -16,7 +16,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   font-family: "Montserrat", sans-serif;
-  line-height: 1.15
+  line-height: 1.15;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -55,7 +56,8 @@ html {
 }
 
 .menu__bar a {
-  color: black; /* Color de los enlaces en el estado normal */
+  color: black;
+  /* Color de los enlaces en el estado normal */
 }
 
 /* Estilos para el menú después de hacer scroll */
@@ -64,7 +66,8 @@ html {
 }
 
 .menu__bar.scrolled a {
-  color: white; /* Color de los enlaces después de hacer scroll */
+  color: white;
+  /* Color de los enlaces después de hacer scroll */
 }
 
 .logo-img2 {
@@ -72,8 +75,10 @@ html {
 }
 
 .menu__bar.scrolled .logo-img2 {
-  filter: brightness(0) invert(1); /* Hace que el logo sea blanco */
+  filter: brightness(0) invert(1);
+  /* Hace que el logo sea blanco */
 }
+
 .menu__wrapper {
   display: flex;
   position: relative;
@@ -95,11 +100,13 @@ html {
   opacity: 0.9;
 
 }
-@media (max-width:786px){
-  .menu__bar{
+
+@media (max-width:786px) {
+  .menu__bar {
     padding: 0 1rem;
   }
 }
+
 .menu-icon {
   cursor: pointer;
   display: flex;
@@ -239,8 +246,10 @@ html {
     display: flex;
     padding: 0;
     /* Elimina el padding para centrar correctamente */
-    width: 100vw; /* Ocupa el ancho completo de la pantalla */
-    height: 100vh; /* Ocupa el alto completo de la pantalla */
+    width: 100vw;
+    /* Ocupa el ancho completo de la pantalla */
+    height: 100vh;
+    /* Ocupa el alto completo de la pantalla */
     /* Asegura que el menú ocupe toda la altura de la pantalla */
     background-color: rgb(0, 0, 0);
     gap: 3rem;
@@ -303,7 +312,8 @@ html {
 /* Ajustes específicos para dispositivos móviles */
 @media (max-width: 768px) {
   .parallax-image {
-    background-attachment: scroll !important; /* Deshabilita el efecto parallax en dispositivos móviles */
+    background-attachment: scroll !important;
+    /* Deshabilita el efecto parallax en dispositivos móviles */
     background-size: cover !important;
     background-position: center !important;
     height: auto !important;
@@ -314,8 +324,8 @@ html {
     background-image: url("../imagenes/Comida fondo.jpg");
   }
 }
- 
-  
+
+
 
 /* Estilos específicos para cada imagen parallax */
 .parallax-image-01 {
@@ -367,7 +377,7 @@ Banner Style
 
 
 .header-text {
-  width: 50%;
+  width: 60%;
   margin-left: 75px;
   margin-top: -50px;
 }
@@ -375,7 +385,7 @@ Banner Style
 
 .highlighted-text2 {
   background-color: rgb(250, 250, 250);
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: -1px;
   font-weight: 900;
   font-style: italic;
@@ -386,8 +396,10 @@ Banner Style
 }
 
 .highlighted-text {
+  font-size: 15px;
   background-color: black;
   color: white;
+  font-style: italic;
   display: inline-block;
   font-weight: bold;
   padding: 5px;
@@ -468,9 +480,10 @@ Banner Style
   }
 
   .header-text {
-    text-align: center;
-    width: 100%;
-    margin-left: 0;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 10%;
   }
 
   .main-banner .buttons {
@@ -623,51 +636,71 @@ Banner Style
   display: flex;
   align-items: center;
   min-width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
   /* Ajustamos el ancho mínimo para el carrusel */
 }
 
 .content {
+z-index: 1;
   width: 100%;
   color: white;
   text-align: center;
   padding: 20px;
-  z-index: 1;
+  
 }
 
 .titulo {
+margin-top: 50px;
+margin-right: 40px;
   z-index: 1;
   color: white;
 }
-
+.titulo2 {
+ margin-left: 100px;
+    z-index: 1;
+    color: white;
+  }
 .images-container .carousel-item {
   z-index: 1;
 }
+
 .images-container2 .carousel-item {
   z-index: 1;
 }
+
 .images-container .carousel-item2 {
   z-index: 1;
 }
 
 .left-image {
+  position: relative;
+  z-index: 10;
   width: 65%;
   height: 100vh;
-  background-image: url('../imagenes/Plato con mancha.png');
+  background-image: url('../imagenes/Plato\ 00.png');
   background-size: cover;
 }
+
 .left-image2 {
-  position: absolute; 
-  width: 30%; /* Ajusta según sea necesario */
-  height: 100vh; /* Ajusta según sea necesario */
-  background-image: url('../imagenes/Mancuerna\ con\ mancha.png');
+z-index: 0;
+  position: absolute;
+  width: 30%;
+  /* Ajusta según sea necesario */
+  height: 100vh;
+  /* Ajusta según sea necesario */
+  background-image: url('../imagenes/Mancuerna.png');
   background-size: cover;
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
 }
 
 .images-container {
   display: flex;
 }
+
 .images-container2 {
   display: flex;
   justify-content: center;
@@ -679,12 +712,14 @@ Banner Style
   text-align: center;
   position: relative;
   margin-right: 10px;
-}.carousel-item2 {
+}
+
+.carousel-item2 {
   flex: 0 0 auto;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   position: relative;
-  margin-right: 10px;
+  margin-right: 100px;
 }
 
 .images-container {
@@ -692,8 +727,9 @@ Banner Style
   display: flex;
   position: relative;
 }
+
 .images-container2 {
-  margin-left: 300px;
+  margin-left: 180px;
   display: flex;
   position: relative;
 }
@@ -701,9 +737,11 @@ Banner Style
 .carousel-item {
   position: relative;
 }
+
 .carousel-item2 {
   position: relative;
 }
+
 .image-container {
   position: relative;
   z-index: 1;
@@ -717,11 +755,15 @@ Banner Style
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 999;
-  
+
 }
 
 
+.carousel-item img:hover {
+  transform: scale(1.1);
+  /* Efecto de zoom */
 
+}
 
 .carousel-item2 img {
   cursor: pointer;
@@ -731,23 +773,27 @@ Banner Style
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 999;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra inicial */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra inicial */
 }
 
 .carousel-item2 img:hover {
-  transform: scale(1.1); /* Efecto de zoom */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+  transform: scale(1.1);
+  /* Efecto de zoom */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Sombra más intensa */
 }
 
 .image-overlay {
   position: absolute;
   left: 50%;
-  width: calc(80% + 5px);
+  width: calc(80% + 60px);
   height: calc(80% + 10px);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   transform: translate(-50%, -60%);
   z-index: 0;
+ 
 }
 
 .caption {
@@ -769,8 +815,9 @@ Banner Style
   margin: 0;
   z-index: 333;
 }
+
 .carousel-item2 .caption p {
-  font-size: 35px;
+  font-size: 23px;
   color: #6d6a6a;
   font-weight: 800;
   font-style: italic;
@@ -850,9 +897,7 @@ button.start-plan:hover {
 }
 
 @media (max-width: 1300px) {
-  .highlighted-text2 {
-    font-size: 1.9em;
-  }
+  
 
   .highlighted-text3,
   .highlighted-text4 {
@@ -866,6 +911,7 @@ button.start-plan:hover {
     flex: 1 1 100%;
     max-width: none;
   }
+
   .carousel-item2 {
     flex: 1 1 100%;
     max-width: none;
@@ -880,17 +926,20 @@ button.start-plan:hover {
 /* Estilos específicos para dispositivos móviles */
 @media (max-width: 786px) {
 
-
+  .section-banner {
+    padding-bottom: 0px;
+  }
   .highlighted-text2 {
-    font-size: 25px;
+    font-size: 19px;
   }
 
-  
+
 
   .left-image {
     display: none;
     /* Oculta la imagen de la izquierda en dispositivos móviles */
   }
+
   .left-image2 {
     display: none;
     /* Oculta la imagen de la izquierda en dispositivos móviles */
@@ -903,6 +952,15 @@ button.start-plan:hover {
   }
 
   .titulo {
+    margin-right: 0px;
+    margin-top: 50px;
+    font-size: 1.2rem;
+    /* Ajusta el tamaño del texto */
+    color: white;
+  }
+  .titulo2 {
+    
+    margin-left: 0px;
     margin-top: 50px;
     font-size: 1.2rem;
     /* Ajusta el tamaño del texto */
@@ -916,6 +974,7 @@ button.start-plan:hover {
     margin-left: 0;
     margin-bottom: 80px;
   }
+
   .images-container2 {
     flex-direction: column;
     /* Cambia la dirección del flex a columna */
@@ -938,6 +997,7 @@ button.start-plan:hover {
     max-height: 150px;
     /* Ajusta la altura máxima para mobile */
   }
+
   .carousel-item2 {
     width: 200px;
     /* Ajusta el ancho de los elementos del carrusel */
@@ -974,6 +1034,7 @@ button.start-plan:hover {
     /* Ajusta el tamaño del texto según sea necesario */
 
   }
+
   .carousel-item2 .caption p {
     margin-top: 20px;
     font-size: 20px;
@@ -998,131 +1059,6 @@ button.start-plan:hover {
 /*----Inicio de testimonios------ */
 
 
-.testimonial-section {
-
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 5rem;
-
-  justify-content: center;
-}
-
-.card {
-  position: relative;
-  overflow: hidden;
-  max-width: 18rem;
-  width: 100%;
-  color: #fff;
-  background: #000;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.card img {
-  max-width: 100%;
-  object-fit: cover;
-  backface-visibility: hidden;
-  vertical-align: top;
-  transition: all 0.3s ease;
-  border-radius: 20px;
-}
-
-.corner::before,
-.corner::after {
-  position: absolute;
-  content: '';
-  background: #fff;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.4s ease;
-}
-
-.right-top::before,
-.right-top::after {
-  top: var(--offset);
-  right: var(--offset);
-}
-
-.right-bottom::before,
-.right-bottom::after {
-  bottom: var(--offset);
-  right: var(--offset);
-}
-
-.left-bottom::before,
-.left-bottom::after {
-  bottom: var(--offset);
-  left: var(--offset);
-}
-
-.left-top::before,
-.left-top::after {
-  top: var(--offset);
-  left: var(--offset);
-}
-
-.corner::before {
-  width: 0;
-  height: 1px;
-}
-
-.corner::after {
-  height: 0;
-  width: 1px;
-}
-
-.card figcaption {
-  position: absolute;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  max-width: 20rem;
-  width: 100%;
-  transform: translateY(-50%) translateX(-50%);
-}
-
-.card h3 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  opacity: 0;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.1rem;
-  transition: all 0.4s ease;
-}
-
-.card p {
-  opacity: 0;
-  font-size: 0.8rem;
-  transition: all 0.4s ease;
-}
-
-.card:hover img {
-  zoom: 1;
-  filter: alpha(opacity=20);
-  opacity: 0.3;
-}
-
-
-
-.card:hover h3 {
-  opacity: 1;
-  transition-delay: 0.3s;
-}
-
-.card:hover p {
-  opacity: 1;
-  transition-delay: 0.35s;
-}
-
 /*----Fin de testimonios------ */
 
 
@@ -1135,11 +1071,13 @@ button.start-plan:hover {
   padding-top: 200px;
 }
 
-@media (max-width:786px){
+@media (max-width:786px) {
   .section-preguntas {
-   
+
     padding-top: 100px;
   }
+
+  
 }
 
 .highlighted-text5 {

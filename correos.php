@@ -33,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Éxito en el envío del correo electrónico
         $mensaje_exito = "Tu mensaje ha sido enviado con éxito. ¡Gracias!";
         // Redireccionar a gracias.html
-        header("Location: pasos.html");
-        exit; // Asegura que el script se detenga después de la redirección
+        header("Location: https://wa.me/+5491136351048?text=👋Hola%2C%20me%20comunico%20desde%20la%20p%C3%A1gina%20porque%20estoy%20interesado%20en%20el%20plan%20de%2030%20d%C3%ADas.");
+ // Asegura que el script se detenga después de la redirección
     } else {
         // Error en el envío del correo electrónico
         $mensaje_error = "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.";

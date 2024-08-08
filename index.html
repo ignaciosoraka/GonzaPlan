@@ -28,7 +28,7 @@
   <!-- Additional CSS Files -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/cambiosfisicos.css">
-
+  <link rel="stylesheet" href="css/popup.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <!-- carrousel  -->
@@ -55,25 +55,48 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- ***** Preloader Start ***** -->
-
-
-
-  <div class="menu__wrapper" id="top">
-    <div class="menu__bar">
-      <a href="#" title="Logo" class="logo">
-        <img src="imagenes/Logo-gg-blanco.png" alt="Logo" class="logo-img2">
-      </a>
-      <img class="menu-icon" src="imagenes/burger-menu.svg" title='Burger Menu' alt='Burger Menu'
-        onclick="toggleMenu(this)">
-      <ul class="navigation">
-        <li><a href="#top" title="Services">Inicio</a></li>
-        <li><a href="#planes" title="Blog">Planes</a></li>
-        <li><a href="#cambios" title="About">Testimonio</a></li>
-        <li><a href="#preguntas" title="Contact Us">Preguntas</a></li>
-        <li><a href="formulariowsp.html" title="Contact Us">¡Comenzá el plan!</a></li>
-      </ul>
+<div class="pop-up">
+    <div class="pop-up-wrap">
+        <div class="pop-up-title">
+            <h2>¡Bienvenido!</h2>
+            <p>Obtén los mejores planes de entrenamiento y nutrición.</p>
+        </div>
+        <div class="subcription">
+            <div class="line"></div>
+            <i class="far fa-times-circle" id="close"></i>
+            <div class="sub-content">
+                <h2 class="highlighted-textpopup">SUSCRIBÍTE</h2>
+                <p>Recibe eBooks exclusivos con planes nutricionales directamente en tu correo.</p>
+                <form id="subscriptionForm">
+                    <input type="email" class="subs-email" placeholder="Escribe tu correo electrónico" required>
+                    <button class="subs-send" type="submit">Enviar Suscripción</button>
+                    <a href="#"><img style="width: 50px;" src="imagenes/facebook (3).png" alt="Facebook"></a>
+                    <a href="#"><img style="width: 50px;" src="imagenes/instagram (3).png" alt="Instagram"></a>
+                    <a href="#"><img style="width: 50px;" src="imagenes/tik-tok (2).png" alt="TikTok"></a>
+                </form>
+            </div>
+            <div class="line"></div>
+        </div>
     </div>
-  </div>
+</div>
+
+
+<div class="menu__wrapper" id="top">
+    <div class="menu__bar">
+        <a href="#" title="Logo" class="logo">
+            <img src="imagenes/Logo-gg-blanco.png" alt="Logo" class="logo-img2">
+        </a>
+        <img class="menu-icon" src="imagenes/burger-menu.svg" title='Burger Menu' alt='Burger Menu'
+            onclick="toggleMenu(this)">
+        <ul class="navigation">
+            <li><a href="#top" title="Services">Inicio</a></li>
+            <li><a href="#cambios" title="About">Testimonio</a></li>
+            <li><a href="#preguntas" title="Contact Us">Preguntas</a></li>
+            <li><a href="formulariowsp.html" title="Contact Us">¡Comenzá el plan!</a></li>
+            <li><a href="#" id="subscribe-link" title="Suscribíte">Suscribíte</a></li> <!-- Nuevo elemento de lista -->
+        </ul>
+    </div>
+</div>
 
 
   <!-- ***** Main Banner Area Start ***** -->
@@ -91,7 +114,7 @@
             <p class="highlighted-text">TÚ MEJOR VERSIÓN.</p>
             <div class="buttons">
               <div class="border-button">
-                <a href="#planes">Comenza Hoy!</a>
+                <a href="https://mpago.la/12ZCkTn">¡Comenzá Hoy!</a>
               </div>
             </div>
           </div>
@@ -139,7 +162,7 @@
           <div class="titulo">
             <h1 class="highlighted-text2">UNA DECISIÓN SIMPLE</h1><br>
             <h1 class="highlighted-text2">EL PLAN INDICADO</h1><br>
-            <h1 class="highlighted-text3">PLAN DE ALIMENTACIÓN SEGÚN OBJETIVOS</h1>
+            <h1 class="highlighted-text3">PLAN DE ALIMENTACIÓN Y ENTRENAMIENTO SEGÚN OBJETIVOS</h1>
             <h1 class="highlighted-text3">SORPRÉNDETE CON LO QUE PUEDES</h1>
             <h1 class="highlighted-text4">LOGRAR EN 30 DÍAS</h1>
             <div class="images-container">
@@ -172,9 +195,9 @@
               </div>
             </div>
           </div>
-          <a href="formulariowsp.html"><button class="btn-details"> Comenzá el plan</button></a> 
+          <a href="https://mpago.la/12ZCkTn"><button class="btn-details"> Comenzá el plan</button></a>
         </div>
-        
+
       </section>
       <section class="section-banner parallax-image parallax-image-02">
         <div class="left-image2" s></div>
@@ -182,34 +205,34 @@
           <div class="titulo2">
             <h1 class="highlighted-text2">UNA DECISIÓN SIMPLE</h1>
             <h1 class="highlighted-text2">EL PLAN INDICADO</h1> <br>
-            <h1 class="highlighted-text3">PLAN DE ALIMENTACIÓN Y ENTRENAMIENTO SEGÚN OBJETIVOS</h1>
+            <h1 class="highlighted-text3">PLAN DE ENTRENAMIENTO SEGÚN OBJETIVOS</h1>
             <h1 class="highlighted-text3">SORPRÉNDETE CON LO QUE PUEDES</h1>
             <h1 class="highlighted-text4">LOGRAR EN 30 DÍAS</h1>
             <div class="images-container2">
-              <div class="carousel-item2">
-                <div class="image-container">
-                  <img src="imagenes/Plan de alimentacion 185x310.jpg" alt="Entrenamiento 1">
-                </div>
-                <div class="caption">
-                  <p>DÍA 1</p>
-                </div>
-                <div class="image-overlay"></div>
+              <div class="carousel-item">
+                  <div class="image-container">
+                      <a href="https://mpago.la/12ZCkTn"><img src="imagenes/Notebook (1).png" alt="Entrenamiento 1"></a>
+                  </div>
+                  <div class="caption">
+                      <p>DÍA 1</p>
+                  </div>
+                  <div class="image-overlay2"></div>
               </div>
-              <div class="carousel-item2">
-                <div class="image-container">
-                  <img src="imagenes/Plan de entrenamiento v2 185x310.jpg" alt="Entrenamiento 2">
-                </div>
-                <div class="caption">
-                  <p>DÍA 2</p>
-                </div>
-                <div class="image-overlay"></div>
+              <div class="carousel-item">
+                  <div class="image-container">
+                      <a href="https://mpago.la/12ZCkTn"><img src="imagenes/Celular (1).png" alt="Entrenamiento 2"></a>
+                  </div>
+                  <div class="caption">
+                      <p>DÍA 2</p>
+                  </div>
+                  <div class="image-overlay2"></div>
               </div>
-              
-            </div>
-           
           </div>
-         <a href="formulariowsp.html"><button class="btn-details"> Comenzá el plan</button></a> 
-        </div>
+          
+          <div class="button-container">
+              <a href="https://mpago.la/12ZCkTn"><button class="btn-details">Comenzá el plan</button></a>
+          </div>
+          
       </section>
     </div>
     <button class="carousel-button prev"></button>
@@ -252,7 +275,7 @@
 
 
   <section class="testimonial-section parallax-image parallax-image-03" id="cambios">
-    
+
     <div class="content2">
       <h1 class="highlighted-text5">CAMBIOS FISICOS DE MIS ALUMNOS</h1>
       <div class="container">
@@ -267,14 +290,14 @@
               <div class="image">
                 <img src="Images/Imagenes carrusel 04.png" alt="sonic" />
                 <div class="dots">
-                 
+
 
                 </div>
               </div>
               <div class="infos">
-                <span class="name">Gastos Rochhetto</span>
-                <span class="lorem" style="margin-bottom: 5px;"><strong>Tiempo:</strong> 12 Meses <br></span>
-                  <span class="lorem"><strong>Objetivo:</strong> Aumentar % muscular y Perder % graso</span>
+                <span class="name">Gaston Rochhetto</span>
+                <span class="lorem" style="margin-bottom: 5px;"><strong>Tiempo:</strong> 12 Meses. <br></span>
+                <span class="lorem"><strong>Objetivo:</strong> Aumentar % muscular y Perder % graso.</span>
 
 
               </div>
@@ -286,14 +309,14 @@
               <div class="image">
                 <img src="Images/Imagenes carrusel 03.png" alt="sonic" />
                 <div class="dots">
-                 
+
 
                 </div>
               </div>
               <div class="infos">
                 <span class="name">Julieta</span>
-                <span class="lorem"style="margin-bottom: 5px;"><strong>Tiempo:</strong> 1 Mes <br></span>
-                  <span class="lorem"><strong>Objetivo:</strong> Aumentar masa muscular</span>
+                <span class="lorem" style="margin-bottom: 5px;"><strong>Tiempo:</strong> 1 Mes. <br></span>
+                <span class="lorem"><strong>Objetivo:</strong> Aumentar masa muscular.</span>
 
 
               </div>
@@ -303,16 +326,17 @@
           <label for="s3" id="slide3">
             <div class="card">
               <div class="image">
-                <img src="Images/Imagenes carrusel 05.png" alt="sonic" />
+                <img src="Images//Imagenes carrusel 20.png" alt="sonic" />
                 <div class="dots">
-                 
+
 
                 </div>
               </div>
               <div class="infos">
-                <span class="name">Matias Canillo</span>
-                <span class="lorem"style="margin-bottom: 5px;"><strong>Tiempo:</strong> 4 Meses <br></span>
-                <span class="lorem"><strong>Objetivo:</strong> Reducir porcentaje graso</span>
+                <span class="name">Nombre
+                </span>
+                <span class="lorem" style="margin-bottom: 5px;"><strong>Tiempo:</strong> a definir. <br></span>
+                <span class="lorem"><strong>Objetivo:</strong> a definir.</span>
 
 
               </div>
@@ -324,14 +348,14 @@
               <div class="image">
                 <img src="Images/Imagenes carrusel 02.png" alt="sonic" />
                 <div class="dots">
-                 
+
 
                 </div>
               </div>
               <div class="infos">
                 <span class="name">Gabriel Juarez</span>
-                <span class="lorem"style="margin-bottom: 5px;"><strong>Tiempo:</strong> 3 Meses <br></span>
-                  <span class="lorem"><strong>Objetivo:</strong> Reducir porcentaje graso</span>
+                <span class="lorem" style="margin-bottom: 5px;"><strong>Tiempo:</strong> 3 Meses. <br></span>
+                <span class="lorem"><strong>Objetivo:</strong> Reducir porcentaje graso.</span>
 
 
               </div>
@@ -341,16 +365,16 @@
           <label for="s5" id="slide5">
             <div class="card">
               <div class="image">
-                <img src="Images/Imagenes carrusel 01.png" alt="sonic" />
+                <img src="Images/Imagenes carrusel 23.png" alt="sonic" />
                 <div class="dots">
-                 
+
 
                 </div>
               </div>
               <div class="infos">
-                <span class="name">Matias Wolczok</span>
-                <span class="lorem"style="margin-bottom: 5px;"><strong>Tiempo:</strong> 3 Meses <br></span>
-                <span class="lorem"><strong>Objetivo:</strong> Reducir porcentaje graso</span>
+                <span class="name">Nombre</span>
+                <span class="lorem" style="margin-bottom: 5px;"><strong>Tiempo:</strong> a definir. <br></span>
+                <span class="lorem"><strong>Objetivo:</strong> a definir.</span>
 
 
               </div>
@@ -359,9 +383,9 @@
         </div>
       </div>
     </div>
-    
+
   </section>
- 
+
 
   <div class="texti">
     <p class="text3">Coaching online </p>
@@ -483,6 +507,7 @@
   <script src="java/scrolnav.js"></script>
   <script src="java/faq.js"></script>
   <script src="java/scroltestimonio.js"></script>
+  <script src="java/popup.js"></script>
   <script>
     // Script para el efecto parallax
     $(document).ready(function () {

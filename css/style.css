@@ -37,6 +37,7 @@ html {
 .menu__bar {
   display: flex;
   align-items: center;
+ 
 
 }
 
@@ -710,6 +711,7 @@ z-index: 0;
 .images-container2 {
   display: flex;
   justify-content: center;
+  gap: 80px;   
 }
 
 .carousel-item {
@@ -774,26 +776,26 @@ z-index: 0;
 .carousel-item2 img {
   cursor: pointer;
   height: auto;
-  max-height: 300px;
+  max-height: 200px;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 999;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
   /* Sombra inicial */
 }
 
 .carousel-item2 img:hover {
   transform: scale(1.1);
   /* Efecto de zoom */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  
   /* Sombra más intensa */
 }
 
 .image-overlay {
   position: absolute;
   left: 50%;
-  width: calc(80% + 60px);
+  width: calc(80% + 20px);
   height: calc(80% + 10px);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
@@ -801,7 +803,16 @@ z-index: 0;
   z-index: 0;
  
 }
-
+.image-overlay2 {
+  position: absolute;
+  left: 50%;
+  width: calc(70% + 40px);
+  height: calc(70% + 5px); /* Reduce la altura */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  transform: translate(-50%, -60%); /* Mueve la imagen un poco más hacia abajo */
+  z-index: 0;
+}
 .caption {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -1198,13 +1209,13 @@ hr {
 .social-icon svg {
   width: 30px;
   height: 30px;
-  fill: #6a0dad;
+  fill: #ffffff;
   /* Color violeta */
   transition: fill 0.3s ease;
 }
 
 .social-icon svg:hover {
-  fill: #fff;
+  fill: #6a0dad;
   /* Color al pasar el mouse */
 }
 
